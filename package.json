@@ -1,0 +1,16 @@
+{
+  "name": "drone-test",
+  "version": "0.0.0",
+  "description": "Testing out the drone stuff",
+  "main": "index.js",
+  "dependencies": {
+    "ar-drone": "git://github.com/felixge/node-ar-drone.git",
+    "express": "^4.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RangerMauve",
+  "license": "MIT"
+}
