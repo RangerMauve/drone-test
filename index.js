@@ -13,15 +13,17 @@ app.get("/drone/:command", function (req, res) {
 	res.send(200, "");
 });
 
-app.get("/png", function() {
-  if (!lastPng) {
-    res.writeHead(503);
-    res.end('Did not receive any png data yet.');
-    return;
-  }
+app.get("/png", function () {
+	if (!lastPng) {
+		res.writeHead(503);
+		res.end('Did not receive any png data yet.');
+		return;
+	}
 
-  res.writeHead(200, {'Content-Type': 'image/png'});
-  res.end(lastPng);
+	res.writeHead(200, {
+		'Content-Type': 'image/png'
+	});
+	res.end(lastPng);
 });
 
 
@@ -32,10 +34,10 @@ reset_client();
 var pngEncoder = c.getPngStream();
 var lastPng;
 pngStream
-  .on('error', console.log)
-  .on('data', function(pngBuffer) {
-    lastPng = pngBuffer;
-  });
+	.on('error', console.log)
+	.on('data', function (pngBuffer) {
+		lastPng = pngBuffer;
+	});
 
 
 
