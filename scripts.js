@@ -5,6 +5,7 @@ function $(query) {
 var controls = $("#controls")[0];
 var command_container = $("#command")[0];
 var args_container = $("#args")[0];
+var preview = $("#preview")[0];
 
 function execute(command, args) {
 	if (!args) args = "[]";
@@ -19,3 +20,11 @@ controls.addEventListener("submit", function (e) {
 	var args = args_container.value;
 	execute(com, args);
 });
+
+setInterval(function () {
+	preview.src = "/png?bust=" + random();
+}, 2000);
+
+function random() {
+	return Math.round(Math.random() * 21337);
+}

@@ -33,11 +33,9 @@ reset_client();
 
 var pngEncoder = c.getPngStream();
 var lastPng;
-pngStream
-	.on('error', console.log)
-	.on('data', function (pngBuffer) {
-		lastPng = pngBuffer;
-	});
+pngEncoder.on('error', console.log).on('data', function (pngBuffer) {
+	lastPng = pngBuffer;
+});
 
 
 
