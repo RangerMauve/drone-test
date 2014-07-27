@@ -13,7 +13,7 @@ app.get("/drone/:command", function (req, res) {
 	res.send(200, "");
 });
 
-app.get("/png", function () {
+app.get("/png", function (req, res) {
 	if (!lastPng) {
 		res.writeHead(503);
 		res.end('Did not receive any png data yet.');

@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "ar-drone": "git://github.com/felixge/node-ar-drone.git",
-    "express": "^4.7.1"
+    "express": "^4.7.1",
+    "ffmpeg": "0.0.4"
   },
   "devDependencies": {},
   "scripts": {

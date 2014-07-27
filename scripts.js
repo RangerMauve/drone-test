@@ -23,7 +23,7 @@ controls.addEventListener("submit", function (e) {
 
 setInterval(function () {
 	preview.src = "/png?bust=" + random();
-}, 2000);
+}, 500);
 
 function random() {
 	return Math.round(Math.random() * 21337);
