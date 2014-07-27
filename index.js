@@ -13,9 +13,33 @@ app.get("/drone/:command", function (req, res) {
 	res.send(200, "");
 });
 
-app.listen(80);
+app.get("/png", function() {
+  if (!lastPng) {
+    res.writeHead(503);
+    res.end('Did not receive any png data yet.');
+    return;
+  }
 
+  res.writeHead(200, {'Content-Type': 'image/png'});
+  res.end(lastPng);
+});
+
+
+app.listen(8080);
+console.log('Drone Server Started...');
 reset_client();
+
+var pngEncoder = c.getPngStream();
+var lastPng;
+pngStream
+  .on('error', console.log)
+  .on('data', function(pngBuffer) {
+    lastPng = pngBuffer;
+  });
+
+
+
+
 /*
 c.takeoff();
 c.after(5000, function () {
