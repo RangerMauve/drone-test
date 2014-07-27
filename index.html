@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <title>Drone Test</title>
-<style></style>
+<link href="style.css" rel="stylesheet">
 <main>
 	<h1>Drone Test</h1>
 	<form id="controls">
@@ -10,6 +10,33 @@
 	</form>
 	<button onclick="execute('takeoff')">Takeoff</button>
 	<button onclick="execute('land')">Land</button>
+	<div class="container">
+		<div class="block">&nbsp;</div>
+		<button class="block" onmousedown="execute('up','[0.1]')" onmouseup="execute('stop')">Up</button>
+		<div class="block">&nbsp;</div>
+
+		<div class="block">&nbsp;</div>
+		<button class="block" onclick="execute('land')">Land</button>
+		<div class="block">&nbsp;</div>
+
+		<div class="block">&nbsp;</div>
+		<button class="block" onmousedown="execute('down','[0.1]')" onmouseup="execute('stop')">Down</button>
+		<div class="block">&nbsp;</div>
+	</div>
+
+	<div class="container right">
+		<div class="block">&nbsp;</div>
+		<button class="block" onmousedown="execute('front','[0.1]')" onmouseup="execute('stop')">Front</button>
+		<div class="block">&nbsp;</div>
+
+		<button class="block" onmousedown="execute('left','[0.1]')" onmouseup="execute('stop')">Left</button>
+		<button class="block" onclick="execute('takeoff')">Takeoff</button>
+		<button class="block" onmousedown="execute('right','[0.1]')" onmouseup="execute('stop')">Right</button>
+
+		<div class="block">D</div>
+		<button class="block" onmousedown="execute('back','[0.1]')" onmouseup="execute('stop')">Back</button>
+		<div class="block">F</div>
+	</div>
 </main>
 <script src="reqwest.min.js"></script>
 <script src="scripts.js"></script>
