@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>Drone Test</title>
+<style></style>
+<main>
+	<h1>Drone Test</h1>
+	<form id="controls">
+		<input id="command">
+		<input id="args">
+		<button id="exec">Exec</button>
+	</form>
+	<button onclick="execute('takeoff')">Takeoff</button>
+	<button onclick="execute('land')">Land</button>
+</main>
+<script src="reqwest.min.js"></script>
+<script src="scripts.js"></script>
